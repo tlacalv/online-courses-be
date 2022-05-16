@@ -1,0 +1,111 @@
+### instructor endpoints
+get http://127.0.0.1:8000/api/instructors
+###
+get http://127.0.0.1:8000/api/instructors/2
+###
+post http://127.0.0.1:8000/api/instructors
+Accept: application/json
+content-type: application/json
+
+{
+  "name":"Leon",
+  "age": 27
+}
+
+###
+
+put http://127.0.0.1:8000/api/instructors/1
+Accept: application/json
+content-type: application/json
+
+{
+  "name":"Tlacaelel",
+  "age": 27
+}
+###
+delete http://127.0.0.1:8000/api/instructors/2
+
+
+
+###student endpoints
+get http://127.0.0.1:8000/api/students
+###
+get http://127.0.0.1:8000/api/students/3
+###
+post http://127.0.0.1:8000/api/students
+Accept: application/json
+content-type: application/json
+
+{
+  "name":"Tlacaelel",
+  "age": 27
+}
+
+###
+
+put http://127.0.0.1:8000/api/students/2
+Accept: application/json
+content-type: application/json
+
+{
+  "name":"affu",
+  "age": 28
+}
+###
+delete http://127.0.0.1:8000/api/students/2
+
+###
+post http://127.0.0.1:8000/api/students/enlist/1
+Accept: application/json
+content-type: application/json
+
+{
+  "course_id":2
+}
+###
+delete http://127.0.0.1:8000/api/students/remove/3
+Accept: application/json
+content-type: application/json
+
+{
+  "course_id":20
+}
+###course endpoints
+
+get http://127.0.0.1:8000/api/courses
+###
+get http://127.0.0.1:8000/api/courses/19
+###
+post http://127.0.0.1:8000/api/courses/chronogram
+Accept: application/json
+content-type: application/json
+
+{
+  "date":"2022/05/13"
+}
+###
+post http://127.0.0.1:8000/api/courses
+Accept: application/json
+content-type: application/json
+
+{
+  "name":"rock",
+  "date": "2022/05/13 04:00:00",
+  "duration": 75,
+  "instructor_id": 1
+}
+
+###
+
+put http://127.0.0.1:8000/api/courses/655
+Accept: application/json
+content-type: application/json
+
+{
+  "name":"cañut",
+  "date": "2022/07/03 04:00:00",
+  "duration": 75,
+  "instructor_id": 1
+}
+###
+delete http://127.0.0.1:8000/api/courses/1
