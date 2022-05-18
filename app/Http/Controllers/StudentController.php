@@ -19,7 +19,7 @@ class StudentController extends Controller
      */
     public function index()
     {
-        return Student::all();
+        return Student::with('courses')->get()->all();
     }
 
     /**
@@ -45,7 +45,9 @@ class StudentController extends Controller
      */
     public function show($id)
     {
-        return Student::with('courses')->get()->find($id)??['empty'=>'true'];
+      $student = Student::with('courses')->get()->find($id);
+
+      return $student ?? response(['message'=>'Not found'],404); 
     }
 
     /**

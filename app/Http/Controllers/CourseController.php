@@ -47,7 +47,9 @@ class CourseController extends Controller
      */
     public function show($id)
     {
-        return Course::find($id);
+        $course = Course::find($id);
+
+        return $course?? response(['message'=>'Not found'],404);
     }
     public function chronogram(Request $request)
     {

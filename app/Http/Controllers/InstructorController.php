@@ -39,8 +39,9 @@ class InstructorController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
-        return Instructor::find($id);
+    { 
+      $instructor =Instructor::find($id);
+      return $instructor ?? response(['message'=>'Not found'],404);;
     }
 
     /**
